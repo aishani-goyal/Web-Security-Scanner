@@ -1,4 +1,4 @@
-# 🌐 Website Security Scanner
+# 🌐 CyberSafe - Website Security Scanner
 
 ## 📌 Overview  
 The **Website Security Scanner** is a tool designed to analyze website URLs for security vulnerabilities, trust scores, SSL certificate validity, and backlink analysis. It helps users assess the reliability of a website by displaying key security metrics in an intuitive visual format.
