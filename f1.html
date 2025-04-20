@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OWASP ZAP Scanner</title>
+    <script>
+      function formSub(event) {
+        event.preventDefault(); // Prevent form submission
+        let val = document.querySelector("#urlInput").value;
+        api(val);
+      }
+
+      // Corrected base URL for the OWASP ZAP API
+      let baseUrl = "http://localhost:8080/JSON/ascan/action/scan/?url=";
+
+      async function api(value) {
+        const response = await fetch(baseUrl + encodeURIComponent(value), {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        // Checking if response is ok
+        if (!response.ok) {
+          console.error("Error with the scan request");
+          return;
+        }
+
+        const result = await response.json();
+        console.log(result); // Log the result to the console
+
+        document.getElementById("result").innerText = JSON.stringify(
+          result,
+          null,
+          2
+        ); // Display the result in a pretty-printed format
+      }
+    </script>
+  </head>
+  <body>
+    <h1>OWASP ZAP Scanner</h1>
+    <form id="urlForm" onsubmit="formSub(event)">
+      <label for="urlInput">Enter URL to Scan:</label>
+      <input type="text" id="urlInput" required />
+      <button type="submit">Scan</button>
+    </form>
+    <pre id="result"></pre>
+  </body>
+</html>

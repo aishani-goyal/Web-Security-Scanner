@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <title>Home | CyberSafe</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Bootstrap 5 CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+  
+
+    <!-- Custom File's Link -->
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/responsive-style.css" />
+  </head>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="85">
+    <script src="js/main.js"></script>
+    <script src="js/localStorage.js"></script>
+    <!-- Navbar section -->
+    <header class="header_wrapper">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="images/cyber_logo.png" class="img-fluid" alt="logo" />
+          </a>
+          <button
+            class="navbar-toggler pe-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fas fa-stream navbar-toggler-icon"></i>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav menu-navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html#home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#features">Features</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#resources"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="domain.html#domain">Domain Insights</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="ssl.html#ssl"
+                      >SSL Certificate Info.</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="vulnerability.html#vulnerability"
+                      >Vulnerability Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="backlink.html#backlink">Backlink Guide</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#faqs">FAQs</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item text-center">
+                <a class="nav-link learn-more-btn" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Navbar section exit -->
+    <!-- URL and Domain Info Section -->
+    <section id="url-info" class="py-5 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Half: Textual Information -->
+          <div class="col-lg-6">
+            <h3 class="mt-4">URL and Domain Info.</h3>
+            <!-- Added mt-4 for downward shift -->
+
+            <div class="mb-3" style="margin-top: 30px">
+              <p><strong>Scanned URL:</strong> <span id="displayScannedURL">Waiting for scan...</span></p>
+            </div>
+            <div class="mb-3">
+              <p><strong>IP Address:</strong> <span id="IPAddress">Waiting for scan...</span></p>
+            </div>
+            <div class="mb-3">
+              <p><strong>Connection: </strong><span id="connectionType">Waiting for scan...</span> </p>
+            </div>
+            <div class="mb-3">
+              <p><strong>Hosting Location:</strong><span id="Hosting">Waiting for scan...</span></p>
+            </div>
+          </div>
+
+          <!-- Right Half: Donut Charts -->
+          <div class="col-lg-6">
+            <div class="d-flex justify-content-around">
+              <!-- Donut Chart 1: Trust Score -->
+              <div class="chart-container">
+                <canvas id="trustScoreChart"></canvas>
+                <h5 class="text-center mt-2">Trust Score</h5>
+              </div>
+              <!-- Donut Chart 2: Vulnerability Score -->
+              <div class="chart-container">
+                <canvas id="vulnerabilityScoreChart"></canvas>
+                <h5 class="text-center mt-2">Vulnerability Score</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scan Summary Section -->
+    <section id="scan-summary" class="scan_summary_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <p class="scan_summary_subtitle">Comprehensive Analysis</p>
+            <h2 class="scan_summary_title">Scan Summary</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <!-- Domain Age and Registration Details -->
+          <div class="col-lg-6 col-sm-12 mb-4">
+            <div class="ss-1">
+              <h3>Domain Details</h3>
+              <ul style="list-style-type: disc; padding-left: 20px">
+              <li>Domain Age: <span id="domainAge">Waiting for scan...</span></li>
+              <li>Registrar: <span id="registrar">Waiting for scan...</span></li>
+              <li>Domain Name: <span id="domainName">Waiting for scan...</span></li>
+              <li>Creation Date: <span id="creationDate">Waiting for scan...</span></li>
+              <li>Expiration Date: <span id="expirationDate">Waiting for scan...</span></li>
+              <li>Name Servers: <span id="nameServers">Waiting for scan...</span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- SSL Certificate Status -->
+          <div class="col-lg-6 col-sm-12 mb-4">
+            <div class="ss-2">
+              <h3>SSL Certificate Status</h3>
+              <ul style="list-style-type: disc; padding-left: 20px">
+                <li>SSL Certificate: <span id="Valid">Waiting for scan...</span></li>
+                <li>Issue Date: <span id="issueDate">Waiting for scan...</span></li>
+                <li>Expiration Date: <span id="expiryDate">Waiting for scan...</span></li>
+                <li>Issuer: <span id="issuer">Waiting for scan...</span></li>
+                <li>Domain: <span id="domain">Waiting for scan...</span></li>
+                <li>Revocation: <span id="revocation">Waiting for scan...</span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Vulnerabilities Detected -->
+          <div class="col-lg-6 col-sm-12 mb-4">
+            <div class="ss-3">
+              <h3>Vulnerabilities Detected</h3>
+              <ul style="list-style-type: disc; padding-left: 20px">
+                <li>Count:<span id="vulnerabilityCount">Waiting for scan...</span></li>
+                <li>
+                  Severity
+                  <ul style="list-style-type: square; padding-left: 20px">
+                    <li>High: <span id="highCount">Waiting for scan...</span></li>
+                    <li>Medium: <span id="mediumCount">Waiting for scan...</span></li>
+                    <li>Low: <span id="lowCount">Waiting for scan...</span></li>
+                    <li>Informational: <span id="informationalCount">Waiting for scan...</span></li>
+                      <!-- Wrap button and description in a container -->
+                        <div class="learn-more-wrapper">
+                            <button class="learn-more-btn2">Learn More</button>
+                        <div class="learn-more-description">
+                        <p>
+                          <span id="Description">Waiting for scan...</span>
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Backlink Analysis Summary -->
+          <div class="col-lg-6 col-sm-12 mb-4">
+            <div class="ss-4">
+              <h3>Backlink Analysis Summary</h3>
+              <ul style="list-style-type: disc; padding-left: 20px">
+                <li>Total Backlinks: <span id="Backlinks">Waiting for scan...</span></li>
+                <li>Follow Links: <span id="Follow_Links">Waiting for scan...</span></li>
+                <li>No-follow Links: <span id="NoFollow_Links">Waiting for scan...</span></li>
+                <li>Secure Links: <span id="Secure_Links">Waiting for scan...</span></li>
+                <li>Not Secure Links: <span id="NotSecure_Links">Waiting for scan...</span>
+                <div class="learn-more-wrapper">
+                            <button class="learn-more-btn2">Learn More</button>
+                            <div class="learn-more-description">
+                            <span id="Summary">Waiting for scan...</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer section -->
+     <section id="contact" class="footer_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 footer_logo mb-4 mb-lg-0">
+                    <img decoding="async" src="images/cyber_logo.png">
+                    <p class="footer_text">CyberSafe is a proactive security scanner designed to detect hidden vulnerabilities and risks in websites, helping protect your digital presence from potential threats and breaches.</p>
+                </div>
+                <div class="col-lg-4 px-lg-5 mb-4 mb-lg-0">
+                    <h3 class="footer_title">Contact</h3>
+                    <p class="footer_text">
+                        <a href="#">info.services@cybersafe.com</a><br>
+                        <a href="#" class="footer-address">F-block Vaishali Nagar <br>Jaipur, Rajasthan, India, 302021</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <h3 class="footer_title">Social Media</h3>
+                    <p>
+                        <a href="#" class="footer_social_media_icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer_social_media_icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer_social_media_icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer_social_media_icon"><i class="fab fa-dribbble"></i></a>
+                    </p>
+                </div>
+                <div class="col-12 footer_credits text-center">
+                    <span>© 2024 <a href="#" target="_blank" title="Code4education">CyberSafe</a>™. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section exit -->
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Chart Initialization Script -->
+  </body>
+</html>
