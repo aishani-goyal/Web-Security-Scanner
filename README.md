@@ -52,6 +52,13 @@ The **Website Security Scanner** is a tool designed to analyze website URLs for 
 
 ---
 
+🔗 Live Demo
+▶️ Watch the Demo Video Below
+
+<video width="100%" controls> <source src="demo.mp4" type="video/mp4"> Your browser does not support the video tag. </video>
+
+---
+
 ## 📌 How It Works
 
 - Enter a website URL in the input field  
